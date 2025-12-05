@@ -1,24 +1,190 @@
-BSD 2-Clause License
+<!DOCTYPE html>  <html lang="bn">  
+<head>  
+<meta charset="UTF-8">  
+<meta name="viewport" content="width=device-width, initial-scale=1.0">  
+<title>Smart Study — Premium Courses</title>  <style>  
+  :root{  
+    --accent:#0066ff;  
+    --dark:#0d1b2a;  
+    --light:#f5f8ff;  
+    --text:#222;  
+    --green:#00b36b;  
+    --yellow:#ffcc00;  
+  }  
+  body{  
+    margin:0;  
+    font-family:system-ui,Roboto,Arial;  
+    background:var(--light);  
+    color:var(--text);  
+  }  
+  
+  header{  
+    background:white;  
+    padding:16px;  
+    box-shadow:0 2px 8px rgba(0,0,0,0.06);  
+    position:sticky;  
+    top:0;  
+    z-index:100;  
+  }  
+  .brand{  
+    font-size:22px;  
+    font-weight:700;  
+    color:var(--accent);  
+  }  
+  
+  .container{  
+    max-width:900px;  
+    margin:20px auto;  
+    padding:0 14px;  
+  }  
+  
+  .hero{  
+    background:white;  
+    padding:18px;  
+    border-radius:14px;  
+    box-shadow:0 8px 30px rgba(0,0,0,0.05);  
+    text-align:center;  
+  }  
+  .hero h1{  
+    margin:10px 0;  
+    font-size:26px;  
+    color:var(--dark);  
+  }  
+  .stats{  
+    display:flex;  
+    justify-content:space-between;  
+    margin-top:18px;  
+    background:#eef4ff;  
+    padding:14px;  
+    border-radius:10px;  
+    font-size:15px;  
+    font-weight:600;  
+  }  
+  .star{  
+    color:var(--yellow);  
+    font-size:20px;  
+    margin-right:4px;  
+  }  
+  
+  .section{  
+    background:white;  
+    padding:18px;  
+    border-radius:14px;  
+    box-shadow:0 8px 30px rgba(0,0,0,0.05);  
+    margin-top:16px;  
+  }  
+  
+  .subject-btn{  
+    display:block;  
+    padding:12px;  
+    margin:8px 0;  
+    background:var(--accent);  
+    color:white;  
+    border-radius:10px;  
+    text-decoration:none;  
+    text-align:center;  
+    font-size:16px;  
+  }  
+  
+  input{  
+    width:100%;  
+    padding:10px;  
+    border:1px solid #ddd;  
+    border-radius:10px;  
+    margin-top:6px;  
+    font-size:15px;  
+  }  
+  
+  .hidden{display:none;}  
+  
+  footer{  
+    text-align:center;  
+    color:#777;  
+    font-size:13px;  
+    padding:16px;  
+  }  
+  
+  .join-box{  
+    background:#e7ffee;  
+    padding:14px;  
+    border-radius:10px;  
+    margin-top:12px;  
+    border:1px solid #b8ffde;  
+    font-size:15px;  
+    line-height:1.5;  
+  }  
+  .btn-green{  
+    background:var(--green);  
+    color:white;  
+    padding:10px 14px;  
+    border-radius:10px;  
+    text-decoration:none;  
+    display:inline-block;  
+    margin-top:10px;  
+  }  
+</style>  </head>  <body>  <header>  
+  <div class="brand">Smart Study</div>  
+</header>  <div class="container">    <!-- HERO -->    <div class="hero">  
+    <h1>Premium Study Platform</h1>  
+    <p>SSC & HSC পরীক্ষার্থীদের জন্য প্রো–লেভেলের নোট, MCQ, CQ এবং Model Test।</p>  <div class="stats">  
+  <div>👥 211,835+ Students</div>  
+  <div><span class="star">★★★★★</span> 5.0 Rating</div>  
+</div>
 
-Copyright (c) 2025, subornasarja-hash
+  </div>    <!-- BENEFITS -->    <div class="section">  
+    <h2>কেন Smart Study সেরা?</h2>  
+    <div class="join-box">  
+      ✔ সহজ ভাষায় বোঝানো নোট    
+      <br>✔ প্রতিটি অধ্যায়ের গভীর ব্যাখ্যা    
+      <br>✔ Model Test + Solution    
+      <br>✔ সময় বাঁচে, স্মার্টভাবে পড়া যায়    
+      <br>✔ যারা এখানে জয়েন করেছে তাদের রেজাল্ট দ্রুত উন্নতি হয়েছে    
+      <br><br>  
+      এখানে পড়লে তুমি নিজের মধ্যে **Boost + Confidence + Speed** — তিনটাই পাবে।  
+    </div>  
+  </div>    <!-- SUBJECTS -->    <div class="section" id="subjects">  
+    <h2>Subjects</h2>  <a href="#" class="subject-btn" onclick="askAccess('বাংলা')">বাংলা</a>  
+<a href="#" class="subject-btn" onclick="askAccess('ইংরেজি')">ইংরেজি</a>  
+<a href="#" class="subject-btn" onclick="askAccess('গণিত')">গণিত</a>  
 
-Redistribution and use in source and binary forms, with or without
-modification, are permitted provided that the following conditions are met:
+<div id="accessBox" class="section hidden">  
+  <p>Access Code লিখুন (Admin Approved সদস্যদের জন্য)</p>  
+  <input id="codeInput" type="password" placeholder="Access Code">  
+  <a href="#" class="subject-btn" onclick="unlock()">Unlock Subject</a>  
+  <p style="font-size:14px;margin-top:8px;">  
+    কোর্স ফি: <b>100৳</b>    
+    <br>পেমেন্ট/Join: <a href="#" class="btn-green">Join Now</a>  
+  </p>  
+</div>  
 
-1. Redistributions of source code must retain the above copyright notice, this
-   list of conditions and the following disclaimer.
+<div id="contentBox" class="section hidden">  
+  <h3 id="subTitle"></h3>  
+  <p>এই সাবজেক্টের Premium Notes, MCQ, CQ এবং Model Test এখানে দেখাবে।</p>  
+</div>
 
-2. Redistributions in binary form must reproduce the above copyright notice,
-   this list of conditions and the following disclaimer in the documentation
-   and/or other materials provided with the distribution.
-
-THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
-AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
-IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
-DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE
-FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
-DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR
-SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
-CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
-OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
-OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+  </div>  </div>  <footer>  
+  © Smart Study — Premium Course Platform    
+</footer>  <script>  
+  const ACCESS = "study100";  
+  let selectedSubject = "";  
+  
+  function askAccess(sub){  
+    selectedSubject = sub;  
+    document.getElementById("accessBox").classList.remove("hidden");  
+    document.getElementById("contentBox").classList.add("hidden");  
+    document.getElementById("codeInput").value = "";  
+  }  
+  
+  function unlock(){  
+    let code = document.getElementById("codeInput").value.trim();  
+    if(code === ACCESS){  
+      document.getElementById("contentBox").classList.remove("hidden");  
+      document.getElementById("subTitle").innerText = selectedSubject;  
+      document.getElementById("accessBox").classList.add("hidden");  
+      alert("Access Granted!");  
+    } else {  
+      alert("Access Code ভুল!");  
+    }  
+  }  
+</script>  </body>  
+</html>  এটা দিয়ে ওয়েব বানাও
